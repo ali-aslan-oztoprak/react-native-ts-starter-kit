@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ReactNativeTSProject",
-    "slug": "ReactNativeTSProject",
+    "name": "ReactNativeStarterKit",
+    "slug": "ReactNativeStarterKit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "reactnativestarterkit",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
