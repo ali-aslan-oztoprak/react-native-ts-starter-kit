@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>React Native Template</Text>
+      <Text style={styles.title}>React Native Starter Kit</Text>
       <Text>Email</Text>
       <TextInput
         value={email}

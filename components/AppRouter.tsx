@@ -2,22 +2,18 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import useColorScheme from '../hooks/useColorScheme';
 import { AuthNavigation, Navigation } from '../navigation';
 import { AppContext } from '../context/App';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { EAuth, tokenProperty } from '../context/App/model';
 import Colors from '../constants/Colors';
+import { View } from './Themed';
 
 const AppRouter = () => {
   const colorScheme = useColorScheme();
   const { state, dispatch } = useContext(AppContext);
   const getAuthTokenData = useCallback(async () => {
     try {
-      dispatch({
-        token: '',
-        type: EAuth.LOGOUT,
-      });
       const token: string | null = await AsyncStorage.getItem(tokenProperty);
-      console.log(token);
 
       if (token !== null) {
         dispatch({
@@ -51,7 +47,9 @@ const AppRouter = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
+      }}
+      lightColor="#eee"
+      darkColor="rgba(255,255,255,0.1)">
       <ActivityIndicator size="large" color={Colors.light.tint} />
     </View>
   ) : state.authenticated ? (

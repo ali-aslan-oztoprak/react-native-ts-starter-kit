@@ -3,17 +3,30 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { useContext } from 'react';
+import { AppContext } from '../context/App';
+import { EAuth } from '../context/App/model';
+import Colors from '../constants/Colors';
 
-export default function TabOneScreen() {
+export default function ProfileScreen() {
+  const { dispatch } = useContext(AppContext);
+  const logout = () => {
+    dispatch({
+      type: EAuth.LOGOUT,
+      token: null,
+    });
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Profile</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <EditScreenInfo path="/screens/ProfileScreen.tsx" />
+      <Text style={{color: Colors.light.tint}} onPress={logout}>Logout</Text>
     </View>
   );
 }

@@ -58,7 +58,7 @@ function RootNavigator(): any {
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
-        options={{ title: 'Oops!' }}
+        options={{ headerTitle: 'Oops!' }}
       />
     </Stack.Navigator>
   );
@@ -69,7 +69,7 @@ function AuthNavigator(): any {
     <AuthStack.Navigator>
       <AuthStack.Screen
         name="Login"
-        options={{ title: 'Login Title' }}
+        options={{ headerTitle: 'Login' }}
         component={Login}
       />
     </AuthStack.Navigator>
