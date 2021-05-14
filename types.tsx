@@ -8,6 +8,10 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
+export type AuthStackParamList = {
+  Login: undefined;
+};
+
 export type BottomTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
