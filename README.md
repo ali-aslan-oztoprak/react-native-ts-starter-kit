@@ -1,1 +1,1 @@
-# react-native-ts-template
+# react-native-ts-starter-kit
